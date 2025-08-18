@@ -1,0 +1,44 @@
+#include <stdio.h>
+#include <math.h>
+
+double getRounded(double amount);
+
+int main(){
+
+    double amountIn;
+    scanf("%lf", &amountIn); //ENSURE YOU USE %LF FOR DOUBLES
+    printf("Your amount was %f\nThe rounded amount is: %.2f", amountIn, getRounded(amountIn)/10);
+
+    return 0;
+    }
+
+    double getRounded(double amount){
+        amount *= 10;
+        if(amount>0){
+            printf("Positive value\n");
+            float flooredVal = floor(amount);
+            printf("Floored value %f\n", flooredVal);
+            if (amount>= flooredVal+0.5)
+            {
+                printf(" 1\n");
+                return flooredVal +0.5;
+            }else{
+                
+                return flooredVal;
+            }
+             
+        }else{
+            printf("Positive value");
+            float ceiledVal = ceil(amount);
+              printf("Ceiled value %f", ceiledVal);
+            if (amount <= ceiledVal - 0.5)
+            {
+                printf("Floored value 2");
+                return ceiledVal-0.5;
+            }else{
+                return ceiledVal;
+            }
+            
+        }
+    }
+
